@@ -1,0 +1,26 @@
+﻿@model CoffeesListViewModel
+@{
+    
+    int counter = 0;
+}
+
+
+<h1 class="categoryColour">@Model.CurrentCategory</h1>
+
+
+<div class="row">
+    @foreach (var coffee in Model.Coffees)
+    {
+        if (counter != 0 && counter % 3 == 0)
+        {
+            @:</div>
+            @:<div class="row">
+        }
+
+        <partial name="_CoffeeCard" model="coffee" />
+
+
+
+ }
+
+</div>

@@ -1,0 +1,22 @@
+﻿@model Coffee
+
+
+<h2 class="categoryColour">@Model.Name</h2>
+
+<div class="img-thumbnail">
+    <img alt="@Model.Name" src="@Model.ImageUrl">
+    <div class="caption-full">
+        <h3 class="float-right">@Model.Price</h3>
+        <h3>
+            <a href="#">@Model.Name</a>
+        </h3>
+        <h4>@Model.ShortDescription</h4>
+        <p>@Model.LongDescription</p>
+        <p class="button">
+            <a class="btn btn-primary" 
+               asp-controller="ShoppingCart" 
+               asp-action="AddToShoppingCart"
+               asp-route-pieId="@Model.CoffeeId">Add to cart</a>
+        </p>
+    </div>
+</div>
